@@ -1,0 +1,16 @@
+version: '3.8'
+
+volumes:
+  pg_data:
+
+services:
+  pg:
+    image: "postgres:12"
+    restart: always
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: bitbucket
+      POSTGRES_PASSWORD: bitbucket
