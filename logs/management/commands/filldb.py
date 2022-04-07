@@ -21,13 +21,12 @@ class Command(BaseCommand):
 
     def handle(self, *args: Any, **options: Any) -> Optional[str]:
         try:
-            user = UserFactory(
-                username="admin",
-                email="admin@admin.ru"
+            user = UserFactory(username="admin", email="admin@admin.ru")
+            notification(
+                self, [user], (
+                    "администратор с username admin и паролем admin"
+                )
             )
-            notification(self, [user], (
-                "администратор с username admin и паролем admin")
-                         )
 
         except CommandError:
             self.stdout.write(self.style.ERROR("Ошибка наполнения БД"))

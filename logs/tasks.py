@@ -1,4 +1,3 @@
-from logs.celery import app
 import glob
 import re
 
@@ -6,6 +5,7 @@ from apachelogs import LogParser
 from celery.utils.log import get_task_logger
 
 from config.settings import settings
+from logs.celery import app
 from logs.models import Log
 from logs.utils import check_log_line
 
@@ -14,8 +14,8 @@ logger = get_task_logger(__name__)
 
 @app.task()
 def parsing_logs_task():
-    logger.info('Задача parsing_logs_task запущена')
-    format = re.sub(r'\\', "", settings.APACHE_LOG_FORMAT)
+    logger.info("Задача parsing_logs_task запущена")
+    format = re.sub(r"\\", "", settings.APACHE_LOG_FORMAT)
     parser = LogParser(format)
     file_mask = settings.APACHE_LOG_FOLDER + "/" + settings.APACHE_LOG_FILE
     for file in sorted(glob.glob(file_mask)):
@@ -34,4 +34,4 @@ def parsing_logs_task():
                         final_status=data.final_status,
                         bytes_sent=data.bytes_sent,
                     )
-        logger.info('Задача parsing_logs_task завершена')
+        logger.info("Задача parsing_logs_task завершена")

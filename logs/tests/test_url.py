@@ -7,13 +7,12 @@ pytestmark = pytest.mark.django_db
 
 
 class TestClientAPI:
-
     def test_get_logs_url(self, authorized_client):
         url = LOGS_URL
         status = 200
         response = authorized_client.get(url)
         assert response.status_code == status, (
-            f"Проверьте, что при get запросе"
+            f"Проверьте, что при get запросе" 
             f"{url} возвращается статус {status}"
         )
 
@@ -22,7 +21,6 @@ class TestClientAPI:
         status = 403
         response = guest_client.get(url)
         assert response.status_code == status, (
-            f"Проверьте, что при get запросе"
+            f"Проверьте, что при get запросе" 
             f"{url} возвращается статус {status}"
         )
-

@@ -12,5 +12,5 @@ class LogAdmin(admin.ModelAdmin):
     list_display = ("host", "request_time", "request_line", "final_status")
     list_filter = (
         ("host", DropdownFilter),
-        ('request_time', DateTimeRangeFilter),
+        ("request_time", DateTimeRangeFilter),
     )

@@ -8,7 +8,7 @@ class LogFilter(FilterSet):
         field_name="request_time", lookup_expr="gte"
     )
     end_request_time = filters.DateTimeFilter(
-        field_name="request_time",lookup_expr="lte"
+        field_name="request_time", lookup_expr="lte"
     )
 
     class Meta:

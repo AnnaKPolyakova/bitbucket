@@ -13,12 +13,10 @@ class UserFactory(factory.django.DjangoModelFactory):
     first_name = factory.Faker("first_name")
     last_name = factory.Faker("last_name")
     username = factory.LazyAttribute(
-        lambda a: "{}.{}".format(
-            a.first_name, a.last_name).lower()
+        lambda a: "{}.{}".format(a.first_name, a.last_name).lower()
     )
     email = factory.LazyAttribute(
-        lambda a: "{}.{}@test.com".format(
-            a.first_name, a.last_name).lower()
+        lambda a: "{}.{}@test.com".format(a.first_name, a.last_name).lower()
     )
     is_staff = True
     is_superuser = True
