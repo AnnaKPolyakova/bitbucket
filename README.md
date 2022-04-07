@@ -33,15 +33,15 @@ Poetry
 #### Перед запуском проекта создаем переменные окружения
 Создаем в корне .env и добавляем в него следующие данные:
 
-* `DJANGO_SECRET_KEY=`
-* `DB_NAME=`
-* `POSTGRES_USER=`
-* `POSTGRES_PASSWORD=`
-* `DB_PORT=5432`
-* `SETTINGS_FOR_CELERY=`
-* `APACHE_LOG_FORMAT=%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"`
-* `APACHE_LOG_FOLDER=log_files`
-* `APACHE_LOG_FILE=*access.log`
+* DJANGO_SECRET_KEY=
+* DB_NAME=bitbucket
+* POSTGRES_USER=bitbucket
+* POSTGRES_PASSWORD=bitbucket
+* DB_PORT=5432
+* SETTINGS_FOR_CELERY=
+* APACHE_LOG_FORMAT=%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"
+* APACHE_LOG_FOLDER=log_files
+* APACHE_LOG_FILE=*access.log
 
 SETTINGS_FOR_CELERY указываем следующие:
 * "config.settings.settings" - для запуска всего проекта в контейнерах
