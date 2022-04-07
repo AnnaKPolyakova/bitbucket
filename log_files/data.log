@@ -1,0 +1,7 @@
+127.0.0.1 - frank [10/Oct/2000:14:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 400 2326 "http://www.example.com/start.html" "Mozilla/4.08 [en] (Win98; I ;Nav)"
+127.0.0.1 - frank [10/Oct/2000:14:56:36 -0700] "GET /apache_pb.gif HTTP/1.0" 400 2326 "http://www.example.com/start.html" "Mozilla/4.08 [en] (Win98; I ;Nav)"
+127.0.0.1 - frank [10/Oct/2000:14:57:36 -0700] "GET /apache_pb.gif HTTP/1.0" 400 2326 "http://www.example.com/start.html" "Mozilla/4.08 [en] (Win98; I ;Nav)"
+127.0.0.1 - frank [10/Oct/2000:14:58:36 -0700] "GET /apache_pb.gif HTTP/1.0" 400 2326 "http://www.example.com/start.html" "Mozilla/4.08 [en] (Win98; I ;Nav)"
+127.0.0.1 - frank [10/Oct/2000:14:59:36 -0700] "GET /apache_pb.gif HTTP/1.0" 400 2326 "http://www.example.com/start.html" "Mozilla/4.08 [en] (Win98; I ;Nav)"
+127.0.0.1 - frank [10/Oct/2000:15:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 400 2326 "http://www.example.com/start.html" "Mozilla/4.08 [en] (Win98; I ;Nav)"
+
