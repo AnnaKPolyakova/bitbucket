@@ -6,7 +6,7 @@ from logs.models import Log
 from logs.serializers import LogSerializer
 
 
-class LogViewSet(
+class LogListView(
     mixins.ListModelMixin,
     viewsets.GenericViewSet,
 ):

@@ -1,10 +1,10 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from logs.views import LogViewSet
+from logs.views import LogListView
 
 router = DefaultRouter()
-router.register(r"logs", LogViewSet, basename="logs")
+router.register(r"logs", LogListView, basename="logs")
 
 clients_urls = [
     path("", include(router.urls)),

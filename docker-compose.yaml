@@ -8,6 +8,33 @@ services:
     env_file:
       - .env
 
+  celery:
+    build: .
+    command: celery -A logs worker -l info
+    depends_on:
+      - web
+      - redis
+
+  celery-beat:
+    build: .
+    command: celery -A logs beat -l info
+    volumes:
+      - .:/code
+    depends_on:
+      - web
+      - db
+      - redis
+
+  redis:
+    image: redis
+    restart: always
+    volumes:
+    - ./storage/redis/data:/data
+    ports:
+    - 6379:6379
+    depends_on:
+      - db
+
   web:
     build: .
     restart: always
@@ -15,12 +42,14 @@ services:
       - static_value:/code/static/
       - media_value:/code/media/
     depends_on:
+      - redis
       - db
     env_file:
       - .env
     command: >
       sh -c "./manage.py migrate &&
       ./manage.py collectstatic --no-input &&
+      ./manage.py filldb &&
       gunicorn config.wsgi:application --bind 0.0.0.0:8000 --reload"
 
   nginx:
@@ -33,6 +62,8 @@ services:
       - media_value:/var/html/media/
     depends_on:
       - web
+      - redis
+
 
 volumes:
   postgres_data:
