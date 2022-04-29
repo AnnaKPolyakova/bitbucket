@@ -14,9 +14,7 @@ def notification(command, objects, text):
 class Command(BaseCommand):
     help = (
         "Заполняет БД тестовыми данными. Сейчас доступны:"
-        " - Теги,"
-        " - Коды,"
-        " - Клиенты"
+        " - Пользователь - адамин,"
     )
 
     def handle(self, *args: Any, **options: Any) -> Optional[str]:
